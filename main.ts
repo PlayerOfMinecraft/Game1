@@ -4,13 +4,12 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.B, function () {
     PlayerX += 1
 })
-let Hazard_2: game.LedSprite = null
 let PlayerX = 0
-let Hazard_2_Count_down = 6
 let Difficulty = 1000
 let Lives = 3
 let sprite = game.createSprite(2, 4)
 let Hazard = game.createSprite(randint(0, 4), 0)
+let Hazard_2 = game.createSprite(randint(0, 4), 0)
 basic.forever(function () {
     Hazard_2.change(LedSpriteProperty.Y, 1)
     basic.pause(Difficulty)
@@ -18,11 +17,6 @@ basic.forever(function () {
 basic.forever(function () {
     Hazard.change(LedSpriteProperty.Y, 1)
     basic.pause(Difficulty)
-})
-basic.forever(function () {
-    if (Hazard_2_Count_down == 0) {
-        Hazard_2 = game.createSprite(randint(0, 4), 0)
-    }
 })
 basic.forever(function () {
     sprite.set(LedSpriteProperty.X, PlayerX)
@@ -41,9 +35,6 @@ basic.forever(function () {
             Hazard = game.createSprite(randint(0, 4), 0)
             game.addScore(1)
             Difficulty += -50
-            if (Hazard_2_Count_down > 0) {
-                Hazard_2_Count_down += -1
-            }
         }
     }
 })
