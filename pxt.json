@@ -1,5 +1,5 @@
 {
-    "name": "Game1",
+    "name": "Falling Object game",
     "description": "",
     "dependencies": {
         "core": "*",
