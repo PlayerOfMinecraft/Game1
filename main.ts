@@ -22,7 +22,6 @@ let sprite: game.LedSprite = null
 let Score = 0
 Score = 0
 let Difficulty = 1000
-let Lives = 3
 sprite = game.createSprite(2, 4)
 basic.pause(500)
 Hazard = game.createSprite(randint(0, 4), 0)
